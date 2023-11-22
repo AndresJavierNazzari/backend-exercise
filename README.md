@@ -1,8 +1,8 @@
 # backend-tareas
 
-Class 2
+## Class 2
 
-Data types: 
+#### Data types: 
 - System.Object
 - Primitive types
 - Using strings
@@ -15,3 +15,19 @@ Data types:
 - Loops: for, while, do while, foreach
 - Methods
 - Obtaining input information: ReadLine, WriteLine, ReadKey, 
+
+
+## Class 3
+
+### Data types: 
+- Boxing and unboxing
+- Conversions (implicit, explicit, user defined, with helper classes)
+- is, as, typeof
+
+### Visual Studio: 
+- Comamands
+- Shorcuts
+- Tracepoints / Breakpoints
+- Conditions for breakpoints
+- Debug tools
+
