@@ -1,6 +1,6 @@
 # backend-tareas
 
-Clase 2
+Class 2
 
 Data types: 
 - System.Object
