@@ -1,4 +1,4 @@
-# Clas 1 Homework
+# Class 1 Homework
 
 Using the C# Common Language Infraestructure shown (Compiler, CLR, JIT, etc) compare with other Language Infraestructyure, you can pick any othe language you than F# or Visual Basic.
 Use images, pictures, diagrams if it helps you to explain the concepts.
