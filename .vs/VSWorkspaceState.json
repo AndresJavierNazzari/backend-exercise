@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\clase2",
-    "\\clase2\\TaskManager",
-    "\\clase2\\TaskManager\\TaskManager"
+    "\\class2",
+    "\\class2\\TaskManager"
   ],
-  "SelectedNode": "\\clase2\\TaskManager",
+  "SelectedNode": "\\class2\\TaskManager\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
