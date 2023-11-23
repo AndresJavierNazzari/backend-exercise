@@ -1,3 +1,5 @@
+# Class 2 Homework
+
 Create a console application that gives the user 3 options:
 1. input commands
 2. show categories
