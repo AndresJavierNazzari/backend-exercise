@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\class2",
-    "\\class2\\TaskManager"
+    "\\class2\\TaskManager",
+    "\\class3",
+    "\\class3\\InputCommands",
+    "\\class3\\InputCommands\\InputCommands"
   ],
-  "SelectedNode": "\\class2\\TaskManager\\Program.cs",
+  "SelectedNode": "\\class3\\InputCommands\\InputCommands\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
