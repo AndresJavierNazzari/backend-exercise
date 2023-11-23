@@ -1,4 +1,4 @@
-# Class 2 Homework
+# Class 3 Homework
 
 Create a console application that gives the user 3 options:
 1. input commands
