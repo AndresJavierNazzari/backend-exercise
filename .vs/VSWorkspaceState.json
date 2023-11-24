@@ -1,12 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\class3",
     "\\class3\\InputCommands",
     "\\class3\\InputCommands\\InputCommands",
-    "\\class4",
-    "\\class4\\Calculator"
+    "\\class4\\Calculator",
+    "\\class5"
   ],
-  "SelectedNode": "\\class4\\Calculator\\Calculator.sln",
+  "SelectedNode": "\\class5",
   "PreviewInSolutionExplorer": false
 }
