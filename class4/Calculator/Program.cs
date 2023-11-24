@@ -33,22 +33,23 @@ class Program
         }
     }
 
-    public static dynamic AddOperation(object value1, object value2)
+    public static dynamic AddOperation(string value1, string value2)
     {
         Type type1 = GetType(value1);
         Type type2 = GetType(value2);
 
-        dynamic v1 = Convert.ChangeType(value1, type1);
-        dynamic v2 = Convert.ChangeType(value2, type2);
-
-        if((IsNumber(type1) && IsNumber(type2)) || (type1 == typeof(string) && type2 == typeof(string)))
+        if((IsNumber(type1) && IsNumber(type2)))
         {
+            dynamic v1 = Convert.ChangeType(value1, type1);
+            dynamic v2 = Convert.ChangeType(value2, type2);
             return v1 + v2;
 
-        } else
+        } else if((type1 == typeof(string) && type2 == typeof(string)))
         {
-            throw new InvalidOperationException("Data types are diferent for the two values.");
+            return value1.ToString() + value2.ToString();
         }
+
+        throw new InvalidOperationException("Data types are diferent for the two values.");
     }
 
     private static bool IsNumber(Type type)

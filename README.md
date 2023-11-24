@@ -45,3 +45,25 @@
 - Partial classes
 - Static members
 
+
+# Class 5
+
+## Class:
+
+### Encapsulation
+- Access Modifiers
+- Encapsulate collections
+
+### Inheritance
+- Types
+- Examples
+- Pitfalls
+
+### Polymorphism
+- Static Polymorphism (or Method Overloading)
+- Dynamic Polymorphism (or Method Overriding)
+
+### Overloading
+- Method Overloading vs Method Overriding
+- Operator Overloading
+
