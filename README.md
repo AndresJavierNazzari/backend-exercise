@@ -31,3 +31,17 @@
 - Conditions for breakpoints
 - Debug tools
 
+
+## Class 4
+
+### Class: 
+- Declaring and using classes
+- Class members (Variables, Operators, Constructor, Finalizer)
+- Class members (Properties, Indexers, Events)
+- Class members (Methods, Types)
+- Understanding properties
+- Method overloading (Method overload, Constructor overload)
+- Resumen: Reference and value types
+- Partial classes
+- Static members
+
