@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\class3\\InputCommands",
-    "\\class3\\InputCommands\\InputCommands",
-    "\\class4\\Calculator",
-    "\\class5"
+    "\\class5",
+    "\\class5\\QuizzApp"
   ],
-  "SelectedNode": "\\class5",
+  "SelectedNode": "\\class5\\QuizzApp\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
