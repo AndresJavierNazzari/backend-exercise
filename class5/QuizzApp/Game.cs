@@ -2,6 +2,24 @@
 {
     internal class Game
     {
+        public void SelectQuiz(List<Quiz> quizList) 
+        {
+            Console.WriteLine("List of available quizes: ");
+            for (int i = 0; i < quizList.Count; i++)
+            {
+                Console.WriteLine($"${i+1} - {quizList[i].Name}");
+            }
+            int choice;
+            do
+            {
+                Console.Write("Enter the number of the quiz you want to play: ");
+
+            } while(!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > quizList.Count);
+            Quiz selectedQuiz = quizList[choice - 1];
+            StartGame(selectedQuiz);
+
+        }
+        
         public void StartGame(Quiz quiz)
         {
             int totalScore = 0;
@@ -63,7 +81,6 @@
         {
          Console.WriteLine($"Your Score: {score}");
         }
-
-
     }
+
 }
