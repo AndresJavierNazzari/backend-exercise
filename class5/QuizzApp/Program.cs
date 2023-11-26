@@ -12,7 +12,7 @@ class Program
         Quiz quiz = new Quiz("General Knowledge", "A quiz to test your general knowledge", questions);
         Quiz quiz2 = new Quiz("General Planets", "A quiz to test your general planets", questions);
 
-        List<Quiz> quizList = [quiz, quizs2];
+        List<Quiz> quizList = [quiz, quiz2];
 
         // Crear una instancia de Game y comenzar el juego
         Game game = new Game();

@@ -7,7 +7,7 @@
             Console.WriteLine("List of available quizes: ");
             for (int i = 0; i < quizList.Count; i++)
             {
-                Console.WriteLine($"${i+1} - {quizList[i].Name}");
+                Console.WriteLine($"{i+1} - {quizList[i].Name}");
             }
             int choice;
             do
@@ -22,12 +22,14 @@
         
         public void StartGame(Quiz quiz)
         {
+            Console.Clear();
             int totalScore = 0;
 
             foreach(var question in quiz.Questions)
             {
                 ShowQuestion(question);    
                 totalScore += GetUserInputAndScore(question);
+                Console.WriteLine();
             }
 
             ShowScore(totalScore);
