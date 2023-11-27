@@ -67,3 +67,15 @@
 - Method Overloading vs Method Overriding
 - Operator Overloading
 
+# Class 6
+
+## Class and Interfaces:
+- Sealed Class
+- Overview class modifiers
+- Interfaces and multiple inheritance
+- Interfaces pitfalls
+- Default and explicit implementation
+- Abstract class
+- Abstract vs Virtual
+- Interface vs Abstract
+- Interface polymorphism
