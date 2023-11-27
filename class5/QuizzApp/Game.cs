@@ -2,12 +2,12 @@
 {
     internal class Game
     {
-        public void SelectQuiz(List<Quiz> quizList) 
+        public void SelectQuiz(List<Quiz> quizList)
         {
             Console.WriteLine("List of available quizes: ");
-            for (int i = 0; i < quizList.Count; i++)
+            for(int i = 0 ; i < quizList.Count ; i++)
             {
-                Console.WriteLine($"{i+1} - {quizList[i].Name}");
+                Console.WriteLine($"{i + 1} - {quizList[i].Name}");
             }
             int choice;
             do
@@ -16,18 +16,17 @@
 
             } while(!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > quizList.Count);
             Quiz selectedQuiz = quizList[choice - 1];
-            StartGame(selectedQuiz);
-
+            Start(selectedQuiz);
         }
-        
-        public void StartGame(Quiz quiz)
+
+        public void Start(Quiz quiz)
         {
             Console.Clear();
             int totalScore = 0;
 
             foreach(var question in quiz.Questions)
             {
-                ShowQuestion(question);    
+                ShowQuestion(question);
                 totalScore += GetUserInputAndScore(question);
                 Console.WriteLine();
             }
@@ -42,7 +41,7 @@
             if(question is MultipleChoiceQuestion mcqQuestion)
             {
                 Console.WriteLine("Options: ");
-                for (int i =0 ; i<mcqQuestion.Choices.Count ; i++)
+                for(int i = 0 ; i < mcqQuestion.Choices.Count ; i++)
                 {
                     Console.WriteLine($"{i + 1} - {mcqQuestion.Choices[i]}");
                 }
@@ -51,18 +50,17 @@
 
         private static int GetUserInputAndScore(Question question)
         {
-            if(question is  MultipleChoiceQuestion mcqQuestion) 
+            if(question is MultipleChoiceQuestion mcqQuestion)
             {
                 int userAnswer;
                 Console.WriteLine("Enter the number of your answer");
-                while(!int.TryParse(Console.ReadLine(), out  userAnswer) || userAnswer < 1 || userAnswer > mcqQuestion.Choices.Count)
+                while(!int.TryParse(Console.ReadLine(), out userAnswer) || userAnswer < 1 || userAnswer > mcqQuestion.Choices.Count)
                 {
                     Console.WriteLine("Please enter a valid answer number");
                     Console.WriteLine("Enter the number of your answer");
                 }
                 return userAnswer == mcqQuestion.Answer ? question.Score : 0;
-            } 
-            else if(question is FillInTheBlankQuestion fibQuestion) 
+            } else if(question is FillInTheBlankQuestion fibQuestion)
             {
                 Console.WriteLine("Enter your answer:");
                 string? userAnswer = Console.ReadLine();
@@ -79,9 +77,9 @@
             return 0;
         }
 
-        private void ShowScore(int score) 
+        private void ShowScore(int score)
         {
-         Console.WriteLine($"Your Score: {score}");
+            Console.WriteLine($"Your Score: {score}");
         }
     }
 
