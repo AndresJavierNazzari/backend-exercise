@@ -28,3 +28,8 @@ Quiz Game Console App:
 - There should be an option to quit the application
 
 Note: Using UML for designing the solution is a plus
+
+
+# Result
+
+UML: https://www.figma.com/file/G1NcTgIWZ7PcGU2vtHzjUu/Console-Quizz-App?type=whiteboard&node-id=0%3A1&t=iP31kALaymmsBRKp-1
