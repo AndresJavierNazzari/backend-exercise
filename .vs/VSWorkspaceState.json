@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\class3\\InputCommands",
-    "\\class3\\InputCommands\\InputCommands",
-    "\\class5\\QuizzApp",
-    "\\class6"
+    "\\class6",
+    "\\class6\\VehicleManagement",
+    "\\class7"
   ],
-  "SelectedNode": "\\class6",
+  "SelectedNode": "\\class7",
   "PreviewInSolutionExplorer": false
 }

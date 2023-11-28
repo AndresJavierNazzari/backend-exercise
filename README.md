@@ -79,3 +79,11 @@
 - Abstract vs Virtual
 - Interface vs Abstract
 - Interface polymorphism
+
+# Class 7
+
+## Generics:
+- Generics, classes and methods
+- Generics interfaces
+- Built in generic interfaces: IEnumerable, ICollection, IList
+- Constraints
