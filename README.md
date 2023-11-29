@@ -91,3 +91,12 @@
 # Class 8
 
 ## Exceptions:
+- Message, Stack trace, Data, Inner exception, Information, HResult, Help link, Target site, Source, etc
+- Exception hierarchy
+- Try, catch and finally
+- Custon exceptions
+
+## .NET Collections
+- IEnumerable
+- Array
+- List
