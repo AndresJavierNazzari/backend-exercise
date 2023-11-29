@@ -87,3 +87,7 @@
 - Generics interfaces
 - Built in generic interfaces: IEnumerable, ICollection, IList
 - Constraints
+
+# Class 8
+
+## Exceptions:
