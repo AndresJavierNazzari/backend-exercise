@@ -9,3 +9,13 @@
 - Avoid terminating the execution of the application
 
 NOTE: Saving all exception errors in a txt file is a plus, add the date and time in wich the exception occurred when writing information in the txt file
+
+
+
+![Alt text](./img/logFile.JPG)
+
+![Alt text](./img/gameExceptions1.JPG)
+
+![Alt text](./img/restrictedsymbols.JPG)
+
+![Alt text](./img/customsexceptions.JPG)
