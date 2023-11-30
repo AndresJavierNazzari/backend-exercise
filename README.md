@@ -100,3 +100,14 @@
 - IEnumerable
 - Array
 - List
+
+# Class 8
+
+## Software Architecture:
+- Architectural patterns
+- Software Architecture Styles
+- Domain Centric Architecture (Hexagonal, Onion, Clean)
+- Layered Architecture
+- Command and Query (CQRS)
+- Vertical Slicing
+- Microservices
