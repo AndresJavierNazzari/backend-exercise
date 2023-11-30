@@ -19,7 +19,7 @@ namespace QuizAppV2
 
         public static MultipleChoiceQuestion CreateQuestion()
         {
-            string questionText = Menus.EnterProperty("question", "text");
+            string questionText = Utils.EnterProperty("question", "text");
             Console.WriteLine("Enter the anser choices (separate each choice with a coma): ");
             List<string> answerChoices = new List<string>(Console.ReadLine().Split(','));
 
@@ -30,19 +30,19 @@ namespace QuizAppV2
             }
 
             int correctAnswer;
-            string correctAnswerStr = Menus.EnterProperty("question", "answer");
+            string correctAnswerStr = Utils.EnterProperty("question", "answer");
             while(!int.TryParse(correctAnswerStr, out correctAnswer) || correctAnswer < 1 || correctAnswer > answerChoices.Count)
             {
                 Console.WriteLine("Invalid input. Please try again.");
-                correctAnswerStr = Menus.EnterProperty("question", "answer");
+                correctAnswerStr = Utils.EnterProperty("question", "answer");
             }
 
             int questionScore;
-            string questionScoreStr = Menus.EnterProperty("question", "score");
+            string questionScoreStr = Utils.EnterProperty("question", "score");
             while(!int.TryParse(questionScoreStr, out questionScore))
             {
                 Console.WriteLine("Invalid input. Please try again.");
-                questionScoreStr = Menus.EnterProperty("question", "score");
+                questionScoreStr = Utils.EnterProperty("question", "score");
             }
 
             return new MultipleChoiceQuestion(questionText, answerChoices, correctAnswer, questionScore);

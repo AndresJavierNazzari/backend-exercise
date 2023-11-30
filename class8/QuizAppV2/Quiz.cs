@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QuizAppV2
+﻿namespace QuizAppV2
 {
     internal class Quiz
     {
@@ -21,8 +15,8 @@ namespace QuizAppV2
 
         public static Quiz CreateQuizz()
         {
-            string quizNmae = Menus.EnterProperty("quiz", "name");
-            string quizDescription = Menus.EnterProperty("quiz", "description");
+            string quizNmae = Utils.EnterProperty("quiz", "name");
+            string quizDescription = Utils.EnterProperty("quiz", "description");
 
             List<Question> questions = new List<Question>();
             bool addMoreQuestions = true;
@@ -30,7 +24,7 @@ namespace QuizAppV2
             while(addMoreQuestions)
             {
                 int choicesQty = Menus.PrintChooseTypeQuestionMenu();
-                int choice = Menus.GetChoice(choicesQty);
+                int choice = Utils.GetChoice(choicesQty);
 
                 switch(choice)
                 {

@@ -17,15 +17,15 @@ namespace QuizAppV2
 
         public static FillInTheBlankQuestion CreateQuestion()
         {
-            string questionText = Menus.EnterProperty("question", "text");
-            string questionAnswer = Menus.EnterProperty("question", "answer");
-            string questionScoreStr = Menus.EnterProperty("question", "score");
+            string questionText = Utils.EnterProperty("question", "text");
+            string questionAnswer = Utils.EnterProperty("question", "answer");
+            string questionScoreStr = Utils.EnterProperty("question", "score");
             int questionScore;
 
             while(!int.TryParse(questionScoreStr, out questionScore))
             {
                 Console.WriteLine("Invalid input. Please try again.");
-                questionScoreStr = Menus.EnterProperty("question", "score");
+                questionScoreStr = Utils.EnterProperty("question", "score");
             }
 
             return new FillInTheBlankQuestion(questionText, questionAnswer, questionScore);

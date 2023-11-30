@@ -4,34 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuizAppV2
-{
-    internal class Game
-    {
-        public void SelectQuiz(List<Quiz> quizList)
-        {
+namespace QuizAppV2 {
+    internal class Game {
+        public Quiz SelectQuiz(List<Quiz> quizList) {
+            Console.Clear();
+
             Console.WriteLine("List of available quizes: ");
-            for(int i = 0 ; i < quizList.Count ; i++)
-            {
+            for(int i = 0 ; i < quizList.Count ; i++) {
                 Console.WriteLine($"{i + 1} - {quizList[i].Name}");
             }
-            int choice;
-            do
-            {
-                Console.Write("Enter the number of the quiz you want to play: ");
 
-            } while(!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > quizList.Count);
-            Quiz selectedQuiz = quizList[choice - 1];
-            Start(selectedQuiz);
+            int choice;
+
+            while(true) {
+                Console.WriteLine("Enter the number of the quiz you want to play: ");
+                string? userInput = Console.ReadLine();
+
+                try {
+                    if(string.IsNullOrEmpty(userInput)) {
+                        throw new InvalidInputException("The quiz cannont be empty.");
+                    }
+                    if(Utils.ContainsRestrictedSymbols(userInput)) {
+                        throw new InvalidInputException("The quiz cannont contains simbols ()[]{}~\"\'.");
+                    }
+                    if(!int.TryParse(userInput, out choice)) {
+                        throw new InvalidInputException("The quiz must be the number of the option.");
+                    }
+                    if(choice < 1 || choice > quizList.Count) {
+                        throw new InvalidInputException($"The quiz must be between 1 and {quizList.Count}.");
+                    }
+
+                    Quiz selectedQuiz = quizList[choice - 1];
+                    return selectedQuiz;
+
+                } catch(Exception ex) {
+                    Utils.LogExceptionToFile(ex);
+                    Console.WriteLine(ex.Message);
+
+                } finally {
+                    Console.WriteLine("Please enter a valid quiz number.");
+                }
+            }
+
         }
 
-        public void Start(Quiz quiz)
-        {
+        public void Start(Quiz quiz) {
             Console.Clear();
             int totalScore = 0;
 
-            foreach(var question in quiz.Questions)
-            {
+            foreach(var question in quiz.Questions) {
                 ShowQuestion(question);
                 totalScore += GetUserInputAndScore(question);
                 Console.WriteLine();
@@ -40,51 +61,84 @@ namespace QuizAppV2
             ShowScore(totalScore);
         }
 
-        private static void ShowQuestion(Question question)
-        {
+        private static void ShowQuestion(Question question) {
             Console.WriteLine($"Question: {question.QuestionText}");
 
-            if(question is MultipleChoiceQuestion mcqQuestion)
-            {
+            if(question is MultipleChoiceQuestion mcqQuestion) {
                 Console.WriteLine("Options: ");
-                for(int i = 0 ; i < mcqQuestion.Choices.Count ; i++)
-                {
+                for(int i = 0 ; i < mcqQuestion.Choices.Count ; i++) {
                     Console.WriteLine($"{i + 1} - {mcqQuestion.Choices[i]}");
                 }
             }
         }
 
-        private static int GetUserInputAndScore(Question question)
-        {
-            if(question is MultipleChoiceQuestion mcqQuestion)
-            {
+        private static int GetUserInputAndScore(Question question) {
+
+            if(question is MultipleChoiceQuestion mcqQuestion) {
                 int userAnswer;
-                Console.WriteLine("Enter the number of your answer");
-                while(!int.TryParse(Console.ReadLine(), out userAnswer) || userAnswer < 1 || userAnswer > mcqQuestion.Choices.Count)
-                {
-                    Console.WriteLine("Please enter a valid answer number");
-                    Console.WriteLine("Enter the number of your answer");
+
+                while(true) {
+                    Console.WriteLine("Enter the number of your answer: ");
+                    string? userInput = Console.ReadLine();
+
+                    try {
+                        if(string.IsNullOrEmpty(userInput)) {
+                            throw new InvalidInputException("The answer cannont be empty.");
+                        }
+                        if(Utils.ContainsRestrictedSymbols(userInput)) {
+                            throw new InvalidInputException("The answer cannont contains simbols ()[]{}~\"\'.");
+                        }
+                        if(!int.TryParse(userInput, out userAnswer)) {
+                            throw new InvalidInputException("The answer must be the number of the option.");
+                        }
+                        if(userAnswer < 1 || userAnswer > mcqQuestion.Choices.Count) {
+                            throw new InvalidInputException($"The answer must be between 1 and {mcqQuestion.Choices.Count}.");
+                        }
+
+                        return userAnswer == mcqQuestion.Answer ? question.Score : 0;
+                    } catch(Exception ex) {
+                        Utils.LogExceptionToFile(ex);
+                        Console.WriteLine(ex.Message);
+                    } finally {
+                        Console.WriteLine("Please enter a valid answer number");
+                    }
                 }
-                return userAnswer == mcqQuestion.Answer ? question.Score : 0;
-            } else if(question is FillInTheBlankQuestion fibQuestion)
-            {
+
+
+            } else if(question is FillInTheBlankQuestion fibQuestion) {
                 Console.WriteLine("Enter your answer:");
                 string? userAnswer = Console.ReadLine();
-                while(string.IsNullOrEmpty(userAnswer))
-                {
-                    Console.WriteLine("Please enter a valid answer");
-                    Console.WriteLine("Enter your answer:");
+
+                while(true) {
+                    try {
+                        if(string.IsNullOrEmpty(userAnswer)) {
+                            throw new InvalidInputException("The answer cannont be empty...");
+
+                        } else if(Utils.ContainsRestrictedSymbols(userAnswer)) {
+                            throw new InvalidInputException("The answer cannont contains simbols ()[]{}~\"\'...");
+                        }
+
+                        return string.Equals(userAnswer.Trim(), fibQuestion.Answer, StringComparison.OrdinalIgnoreCase) ? question.Score : 0;
+
+                    } catch(NoQuizAvailableException ex) {
+                        Utils.LogExceptionToFile(ex);
+                        Console.WriteLine(ex.Message);
+
+                    } catch(InvalidInputException ex) {
+                        Utils.LogExceptionToFile(ex);
+                        Console.WriteLine(ex.Message);
+
+                    } finally {
+                        Console.WriteLine("Please enter a valid answer.");
+                    }
+
                     userAnswer = Console.ReadLine();
                 }
-
-                return string.Equals(userAnswer.Trim(), fibQuestion.Answer, StringComparison.OrdinalIgnoreCase) ? question.Score : 0;
             };
-
             return 0;
         }
 
-        private void ShowScore(int score)
-        {
+        private void ShowScore(int score) {
             Console.WriteLine($"Your Score: {score}");
         }
     }
