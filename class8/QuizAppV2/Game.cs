@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QuizAppV2 {
+﻿namespace QuizAppV2 {
     internal class Game {
         public Quiz SelectQuiz(List<Quiz> quizList) {
             Console.Clear();
