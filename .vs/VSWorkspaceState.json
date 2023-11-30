@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\class5",
+    "\\class5\\QuizzApp",
+    "\\class8"
   ],
-  "SelectedNode": "\\GenericDataStorage.sln",
+  "SelectedNode": "\\class8",
   "PreviewInSolutionExplorer": false
 }
