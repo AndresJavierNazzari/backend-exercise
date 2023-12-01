@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\class8",
+    "\\class8\\img",
+    "\\class8\\QuizAppV2"
   ],
-  "SelectedNode": "\\QuizAppV2.sln",
+  "SelectedNode": "\\class8\\QuizAppV2\\Game.cs",
   "PreviewInSolutionExplorer": false
 }
