@@ -113,6 +113,7 @@
 - Microservices
 
 # Class 10
+
 - .NET Solution Structure
 - .sln and .csproj File
 - Namespaces
@@ -127,3 +128,16 @@
 
 
 # Class 11
+
+## REST
+- REST: Principles and constrains to create an API (Representational State Transfer)
+- REST's Guiding Principles
+- What  is a Resource?
+- REST != HTTP
+- HTTP Verbs
+- HTTP Response Headers
+- REST API Design
+- Web Servers, Kestrel
+- Routing
+- API Controller
+- Endpoints Example
