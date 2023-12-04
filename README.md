@@ -101,7 +101,7 @@
 - Array
 - List
 
-# Class 8
+# Class 9
 
 ## Software Architecture:
 - Architectural patterns
@@ -111,3 +111,5 @@
 - Command and Query (CQRS)
 - Vertical Slicing
 - Microservices
+
+# Class 10
