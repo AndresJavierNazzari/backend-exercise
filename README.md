@@ -113,3 +113,17 @@
 - Microservices
 
 # Class 10
+- .NET Solution Structure
+- .sln and .csproj File
+- Namespaces
+- Common Namespaces
+- References
+- Nuget
+- Hexagonal Architectural pattern
+- Onion Architectural pattern
+- Bob's Clean Architectural pattern
+- ASP NET Core Web App
+- Example
+
+
+# Class 11
