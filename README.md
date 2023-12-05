@@ -143,5 +143,6 @@
 - Endpoints Example
 
 # Class 12
+- Resource Naming Guidelines
 
 
