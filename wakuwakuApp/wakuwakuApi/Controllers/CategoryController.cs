@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using wakuwakuApi.Entities;
-using Microsoft.AspNetCore.JsonPatch;
 using wakuwakuApi.Models;
 
 namespace wakuwakuApi.Controllers {
