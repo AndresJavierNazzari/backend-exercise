@@ -1,5 +1,5 @@
 @wakuwakuApi.Version = 1
-@wakuwakuApi.Port = 7074
+@wakuwakuApi.Port = 7140
 @wakuwakuApi.HostAddress = https://localhost:{{wakuwakuApi.Port}}/api/v{{wakuwakuApi.Version}}
 
 GET {{wakuwakuApi.HostAddress}}/category/
