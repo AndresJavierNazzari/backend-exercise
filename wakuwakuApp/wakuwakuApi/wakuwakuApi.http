@@ -1,6 +1,18 @@
-@wakuwakuApi_HostAddress = http://localhost:5127
+@wakuwakuApi.Version = 1
+@wakuwakuApi.Port = 7074
+@wakuwakuApi.HostAddress = https://localhost:{{wakuwakuApi.Port}}/api/v{{wakuwakuApi.Version}}
 
-GET {{wakuwakuApi_HostAddress}}/weatherforecast/
+GET {{wakuwakuApi.HostAddress}}/category/
 Accept: application/json
 
+###
+
+POST {{wakuwakuApi.HostAddress}}/category/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Languaje",
+  "description": "Categoría relacionada con idiomas."
+}
 ###
