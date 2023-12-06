@@ -40,7 +40,7 @@ namespace wakuwakuApi.Controllers {
         // GET: CategoryController
         [HttpGet]
         public ActionResult<IEnumerable<Category>> GetCategories(
-            [FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "", [FromQuery] string order = "") {
+            [FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
 
             var paginatedCategories = categories.Skip((page - 1) * pageSize).Take(pageSize);
 
@@ -48,12 +48,6 @@ namespace wakuwakuApi.Controllers {
                 paginatedCategories =
                     paginatedCategories.Where(c => c.Name.Contains(filter, StringComparison.OrdinalIgnoreCase)
                     || c.Description.Contains(filter, StringComparison.OrdinalIgnoreCase));
-            }
-
-            if(order.Equals("DESC", StringComparison.OrdinalIgnoreCase)) {
-                paginatedCategories = paginatedCategories.OrderByDescending(c => c.Name);
-            } else {
-                paginatedCategories = paginatedCategories.OrderBy(c => c.Name);
             }
 
             return Ok(paginatedCategories);
