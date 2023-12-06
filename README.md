@@ -142,7 +142,9 @@
 - API Controller
 - Endpoints Example
 
+- 
 # Class 12
+
 - REST API Design
 - Endpoint Examples
 - Resource Naming Guidelines
@@ -153,4 +155,7 @@
 - Paging
 - Paging metadata
 
+# Class 13
 
+- Inversion of control
+- Dependency injection
