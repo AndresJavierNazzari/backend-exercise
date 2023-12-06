@@ -1,4 +1,4 @@
-# Class 12 Homework
+# Class 11 Homework
 
 ## Following a Domain Centric Architecture, with the Domain models designed from the Previous homework (on class 10) create a ASP.NET Core Web API
 
