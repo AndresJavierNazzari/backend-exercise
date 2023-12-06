@@ -143,6 +143,14 @@
 - Endpoints Example
 
 # Class 12
+- REST API Design
+- Endpoint Examples
 - Resource Naming Guidelines
+- Content negotiation
+- App settings
+- Other configuration sources
+- Filtering and searching
+- Paging
+- Paging metadata
 
 
