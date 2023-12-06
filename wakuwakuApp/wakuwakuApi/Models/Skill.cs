@@ -9,10 +9,11 @@ namespace wakuwakuApi.Models {
         public string Description { get; set; }
         public Category Category { get; set; }
 
-        public Skill(string name, string description) {
+        public Skill(string name, string description, Category category) {
             this.Id = ++lastId;
             this.Name = name;
             this.Description = description;
+            this.Category = category;
         }
 
         // Método estático para obtener el siguiente ID disponible
