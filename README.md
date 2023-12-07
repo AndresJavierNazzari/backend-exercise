@@ -155,10 +155,11 @@
 - Paging
 - Paging metadata
 
-- 
+
 # Class 13
 
-- Inversion of control
+## Inversion of control
+
 - Dependency injection
 - Lifetime of injected services
 - Dependency captivity
@@ -169,4 +170,11 @@
 
 # Class 14
 
-- 
+## Middlewares
+
+- ASP Net Core Middlewares
+- Custom Middlewares
+- Global Exception Handling
+- Filters
+- Global Exception Handling via Filters
+- Middleware methods
