@@ -159,3 +159,9 @@
 
 - Inversion of control
 - Dependency injection
+- Lifetime of injected services
+- Dependency captivity
+- Dependency injection and service locator
+- Unit testing
+- DI considerations
+- Indempotency and safety

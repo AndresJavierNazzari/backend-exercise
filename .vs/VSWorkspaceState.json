@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\class12",
+    "\\Class13",
+    "\\WakuwakuApp",
+    "\\WakuwakuApp\\wakuwakuApi",
+    "\\WakuwakuApp\\wakuwakuApi\\Controllers"
   ],
-  "SelectedNode": "\\wakuwakuApp.sln",
+  "SelectedNode": "\\Class13\\README.md",
   "PreviewInSolutionExplorer": false
 }
