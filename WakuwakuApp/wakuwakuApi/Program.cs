@@ -1,6 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Reflection;
+using wakuwakuApi.Persistence;
+using wakuwakuApi.Persistence.Interfaces;
+using wakuwakuApi.Repositories.Interfaces;
+using wakuwakuApi.Repositories;
+using wakuwakuApi.Services.Interfaces;
+using wakuwakuApi.Services;
 
 namespace wakuwakuApi {
     public class Program {
@@ -13,8 +19,11 @@ namespace wakuwakuApi {
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddControllers().AddNewtonsoftJson();
 
+            builder.Services.AddControllers().AddNewtonsoftJson();
+            builder.Services.AddSingleton<IInMemoryPersistenceService, InMemoryPersistenceService>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 
