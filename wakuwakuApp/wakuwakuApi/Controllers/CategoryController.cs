@@ -1,42 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using wakuwakuApi.Models;
+using wakuwakuApi.Services.Interfaces;
 
 namespace wakuwakuApi.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class CategoryController : Controller {
-        private static List<Category> categories = new List<Category> {
-                new Category("Language", "Category related to languages."),
-                new Category("Musical Instrument", "Category related to musical instruments."),
-                new Category("Programming Language", "Category related to programming languages."),
-                new Category("Sports", "Category related to sports."),
-                new Category("Science", "Category related to scientific disciplines."),
-                new Category("Art", "Category related to visual and performing arts."),
-                new Category("History", "Category related to historical events and periods."),
-                new Category("Technology", "Category related to technological advancements."),
-                new Category("Travel", "Category related to travel and exploration."),
-                new Category("Health", "Category related to health and wellness."),
-                new Category("Fashion", "Category related to clothing and style."),
-                new Category("Food", "Category related to culinary delights."),
-                new Category("Education", "Category related to learning and academia."),
-                new Category("Nature", "Category related to the natural world."),
-                new Category("Entertainment", "Category related to entertainment and media."),
-                new Category("Business", "Category related to commerce and entrepreneurship."),
-                new Category("Hobbies", "Category related to personal interests and pastimes."),
-                new Category("Fitness", "Category related to physical fitness and exercise."),
-                new Category("Pets", "Category related to animals and pets."),
-                new Category("Home and Garden", "Category related to home improvement and gardening.")
-             };
+    public class CategoryController : ControllerBase {
 
-        private readonly string connectionString;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController() {
-            var appSettings = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true).Build();
-            var connectionStrings = appSettings.GetValue<string>("ConnectionStrings:WakuWakuAPIConnection");
-            ArgumentException.ThrowIfNullOrEmpty(connectionStrings);
+        public CategoryController(ICategoryService categoryService) {
+            _categoryService = categoryService;
         }
 
+        // GET: CategoryController
+        [HttpGet]
+        public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize=10, [FromQuery] string filter="") {
+            var categories = _categoryService.GetCategories(page, pageSize, filter);
+            return Ok(categories);
+        }
+
+        /*
         // GET: CategoryController
         [HttpGet]
         public ActionResult<IEnumerable<Category>> GetCategories(
@@ -97,5 +82,7 @@ namespace wakuwakuApi.Controllers {
 
             return NoContent();
         }
+
+        */
     }
 }
