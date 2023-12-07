@@ -142,7 +142,7 @@
 - API Controller
 - Endpoints Example
 
-- 
+
 # Class 12
 
 - REST API Design
@@ -155,6 +155,7 @@
 - Paging
 - Paging metadata
 
+- 
 # Class 13
 
 - Inversion of control
@@ -165,3 +166,7 @@
 - Unit testing
 - DI considerations
 - Indempotency and safety
+
+# Class 14
+
+- 
