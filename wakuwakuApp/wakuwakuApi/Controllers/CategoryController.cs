@@ -16,7 +16,7 @@ namespace wakuwakuApi.Controllers {
 
         // GET: CategoryController
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize=10, [FromQuery] string filter="") {
+        public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
             var categories = _categoryService.GetCategories(page, pageSize, filter);
             return Ok(categories);
         }
@@ -38,7 +38,7 @@ namespace wakuwakuApi.Controllers {
             return Ok(paginatedCategories);
         }
 
-        //GET: CategoryController/5
+         // TODO: GET By ID: CategoryController/5
         [HttpGet("{id}", Name = "Get Category")]
         public ActionResult<Category> GetCategory(int id) {
             var category = categories.FirstOrDefault(c => c.Id == id);
@@ -48,7 +48,7 @@ namespace wakuwakuApi.Controllers {
             return Ok(category);
         }
 
-        // POST: CategoryController
+        // TODO: POST: CategoryController
         [HttpPost]
         public ActionResult<Category> CreateCategory([FromBody] Category newCategory) {
             if(newCategory == null) return BadRequest("La categoría proporcionada es nula.");
@@ -60,7 +60,7 @@ namespace wakuwakuApi.Controllers {
             return CreatedAtRoute("GetCategory", new { id = newCategory.Id }, newCategory);
         }
 
-        //PUT: CategoryController/5
+        //TODO: PUT: CategoryController/5
         [HttpPut("{id}")]
         public ActionResult<Category> UpdateCategory(int id, [FromBody] CategoryUpdate updatedCategory) {
             var existingCategory = categories.FirstOrDefault(c => c.Id == id);
@@ -72,7 +72,7 @@ namespace wakuwakuApi.Controllers {
             return Ok(existingCategory);
         }
 
-        //DELETE: CategoryController/5
+        // TODO: DELETE: CategoryController/5
         [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id) {
             var existingCategory = categories.FirstOrDefault(c => c.Id == id);

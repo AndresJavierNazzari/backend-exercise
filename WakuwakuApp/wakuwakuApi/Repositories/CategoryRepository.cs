@@ -17,14 +17,8 @@ public class CategoryRepository : ICategoryRepository {
 
     public IEnumerable<Category> GetCategories(int page = 1, int pageSize = 10, string filter = "") {
         var categoryList = _context.Categories;
-        var paginatedCategories = categoryList.Skip((page - 1) * pageSize).Take(pageSize);
 
-        if(!string.IsNullOrEmpty(filter)) {
-            paginatedCategories =
-                paginatedCategories.Where(c => c.Name.Contains(filter, StringComparison.OrdinalIgnoreCase)
-                || c.Description.Contains(filter, StringComparison.OrdinalIgnoreCase));
-        }
-        return paginatedCategories.ToList();
+        return categoryList;
     }
     //public static GetCategorieById() { }
     //public static AddCategory(Category category) { }
