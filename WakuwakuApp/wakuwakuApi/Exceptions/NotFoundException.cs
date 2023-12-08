@@ -5,7 +5,7 @@ public class NotFoundException : ArgumentException {
 
     public static void ThrowIfNull<T>(T? param, string? message = null) {
         if(param is null) {
-            throw new NotFoundException(message ?? $"Resource was not found");
+            throw new NotFoundException(message ?? "Resource was not found");
         }
     }
 }

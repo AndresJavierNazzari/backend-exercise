@@ -6,6 +6,11 @@ namespace wakuwakuApi.Middlewares;
 
 internal sealed class GlobalExceptionHandler : IExceptionHandler {
 
+    private readonly ILogger<GlobalExceptionHandler> logger;
+    public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) {
+        this.logger = logger;
+    }
+
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken) {
 
         var exceptionMessage = exception.Message;
