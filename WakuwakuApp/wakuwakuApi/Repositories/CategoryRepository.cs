@@ -18,8 +18,8 @@ public class CategoryRepository : ICategoryRepository {
 
     public IEnumerable<Category> GetCategories() {
         var categoryList = _context.Categories ?? throw new Exception();
+        NotFoundException.ThrowIfNull(categoryList);
 
-        //NotFoundException.ThrowIfNull(categoryList);
         return categoryList;
     }
 
@@ -29,11 +29,40 @@ public class CategoryRepository : ICategoryRepository {
         Category? category = categoryList.FirstOrDefault(c => c.Id == categoryId);
 
         NotFoundException.ThrowIfNull(category);
-        //if(category is null) throw new Exception("Category Id not exists");
 
         return category;
-
     }
-    //public static AddCategory(Category category) { }
+
+    public Category AddCategory(CategoryCreate categoryCreate) {
+        var categoryList = _context.Categories;
+
+        Category createdCategory = new Category(categoryCreate.Name, categoryCreate.Description);
+
+        categoryList.Add(createdCategory);
+
+        return createdCategory;
+    }
+
+    public Category UpdateCategory(int categoryId, CategoryUpdate categoryUpdate) {
+        var categoryList = _context.Categories;
+        Category existingCategory = categoryList.FirstOrDefault(c => c.Id == categoryId);
+        NotFoundException.ThrowIfNull(existingCategory);
+
+        existingCategory.Name = categoryUpdate.Name;
+        existingCategory.Description = categoryUpdate.Description;
+
+        return existingCategory;
+    }
+
+    public Category DeleteCategoryById(int categoryId) {
+        var categoryList = _context.Categories;
+        Category? category = categoryList.FirstOrDefault(c => c.Id == categoryId);
+
+        NotFoundException.ThrowIfNull(category);
+        categoryList.Remove(category);
+
+        return category;
+    }
+
 }
 

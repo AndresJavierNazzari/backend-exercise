@@ -8,8 +8,6 @@ namespace wakuwakuApi.Persistence {
         public IList<Category> Categories { get; set; }
 
         public InMemoryPersistenceService(IConfiguration configuration) {
-            //var appSettings = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true).Build();
-            //var connectionStrings = appSettings.GetValue<string>("ConnectionStrings:WakuWakuAPIConnection");
 
             var connectionStrings = configuration["ConnectionStrings:WakuWakuAPIConnection"];
             ArgumentException.ThrowIfNullOrEmpty(connectionStrings);

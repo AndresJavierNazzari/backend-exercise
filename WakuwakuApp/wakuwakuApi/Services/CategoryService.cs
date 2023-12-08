@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using wakuwakuApi.Exceptions;
 using wakuwakuApi.Models;
 using wakuwakuApi.Repositories.Interfaces;
 using wakuwakuApi.Services.Interfaces;
@@ -30,6 +31,27 @@ namespace wakuwakuApi.Services {
             var category = _categoryRepository.GetCategoryById(categoryId);
 
             return category;
+        }
+
+        public Category AddCategory(CategoryCreate categoryCreate) {
+            var createdCategory = _categoryRepository.AddCategory(categoryCreate);
+
+            return createdCategory;
+        }
+
+        public Category UpdateCategory(int categoryId, CategoryUpdate categoryUpdate) {
+            Category UpdatedCategory = _categoryRepository.UpdateCategory(categoryId, categoryUpdate);
+
+            return UpdatedCategory;
+        }
+
+        public Category DeleteCategoryById(int categoryId) {
+            var category = _categoryRepository.DeleteCategoryById(categoryId);
+
+            NotFoundException.ThrowIfNull(category);
+
+            return category;
+
         }
 
     }

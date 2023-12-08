@@ -29,43 +29,33 @@ namespace wakuwakuApi.Controllers {
             return Ok(category);
         }
 
-        /*
-           
-        // TODO: POST: CategoryController
-        [HttpPost]
-        public ActionResult<Category> CreateCategory([FromBody] Category newCategory) {
-            if(newCategory == null) return BadRequest("La categoría proporcionada es nula.");
+        // POST: CategoryController
+        [HttpPost(Name = "CreateCategory")]
+        public ActionResult<Category> CreateCategory([FromBody] CategoryCreate categoryCreate) {
+            var category = _categoryService.AddCategory(categoryCreate);
 
-            newCategory.Id = Category.GetNextId();
-
-            categories.Add(newCategory);
-
-            return CreatedAtRoute("GetCategory", new { id = newCategory.Id }, newCategory);
+            return CreatedAtRoute("CreateCategory", new { id = category.Id }, category);
         }
 
-        //TODO: PUT: CategoryController/5
-        [HttpPut("{id}")]
-        public ActionResult<Category> UpdateCategory(int id, [FromBody] CategoryUpdate updatedCategory) {
-            var existingCategory = categories.FirstOrDefault(c => c.Id == id);
-            if(existingCategory == null) return NotFound();
+        //  PUT: CategoryController/5
+        [HttpPut("{categoryId}")]
+        public ActionResult<Category> UpdateCategory(int categoryId, [FromBody] CategoryUpdate categoryUpdate) {
+            var category = _categoryService.UpdateCategory(categoryId, categoryUpdate);
 
-            existingCategory.Name = updatedCategory.Name;
-            existingCategory.Description = updatedCategory.Description;
-
-            return Ok(existingCategory);
+            return Ok(category);
         }
 
-        // TODO: DELETE: CategoryController/5
+        // DELETE: CategoryController/5
         [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id) {
-            var existingCategory = categories.FirstOrDefault(c => c.Id == id);
-            if(existingCategory == null) return NotFound();
+            var deletedCategory = _categoryService.DeleteCategoryById(id);
 
-            categories.Remove(existingCategory);
+            var response = new {
+                message = $"Resource deleted: category {id}",
+                deletedCategory
+            };
 
-            return NoContent();
+            return Ok(response);
         }
-
-        */
     }
 }

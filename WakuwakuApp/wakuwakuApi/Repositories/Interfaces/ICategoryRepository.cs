@@ -5,6 +5,8 @@ namespace wakuwakuApi.Repositories.Interfaces {
 
         IEnumerable<Category> GetCategories();
         Category GetCategoryById(int categoryId);
-
+        Category AddCategory(CategoryCreate categoryCreate);
+        Category UpdateCategory(int categoryId, CategoryUpdate categoryUpdate);
+        Category DeleteCategoryById(int categoryId);
     }
 }
