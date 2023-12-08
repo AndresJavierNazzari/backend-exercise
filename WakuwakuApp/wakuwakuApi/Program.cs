@@ -7,6 +7,7 @@ using wakuwakuApi.Repositories.Interfaces;
 using wakuwakuApi.Repositories;
 using wakuwakuApi.Services.Interfaces;
 using wakuwakuApi.Services;
+using wakuwakuApi.Middlewares;
 
 namespace wakuwakuApi {
     public class Program {
@@ -25,7 +26,11 @@ namespace wakuwakuApi {
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
             var app = builder.Build();
+
+            // GlobalExceptionHandler.ConfigureExceptionHandler(app);
 
             // Configure the HTTP request pipeline.
             if(app.Environment.IsDevelopment()) {

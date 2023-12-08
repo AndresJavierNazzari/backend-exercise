@@ -5,5 +5,6 @@ using wakuwakuApi.Models;
 namespace wakuwakuApi.Services.Interfaces {
     public interface ICategoryService {
         IEnumerable<Category> GetCategories(int page, int pageSize, string filter);
+        Category GetCategoryById(int categoryId);
     }
 }

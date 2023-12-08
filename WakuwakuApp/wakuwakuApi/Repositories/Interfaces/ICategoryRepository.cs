@@ -3,7 +3,8 @@
 namespace wakuwakuApi.Repositories.Interfaces {
     public interface ICategoryRepository {
 
-        IEnumerable<Category> GetCategories(int page, int pageSize, string filter);
+        IEnumerable<Category> GetCategories();
+        Category GetCategoryById(int categoryId);
 
     }
 }

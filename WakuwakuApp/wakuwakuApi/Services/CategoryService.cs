@@ -11,9 +11,9 @@ namespace wakuwakuApi.Services {
             _categoryRepository = categoryRepository;
         }
 
-        public IEnumerable<Category> GetCategories(int page, int pageSize, string filter) {
+        public IEnumerable<Category> GetCategories(int page = 1, int pageSize = 10, string filter = "") {
 
-            var categoryList = _categoryRepository.GetCategories(page, pageSize, filter);
+            var categoryList = _categoryRepository.GetCategories();
 
             var paginatedCategories = categoryList.Skip((page - 1) * pageSize).Take(pageSize);
 
@@ -24,6 +24,12 @@ namespace wakuwakuApi.Services {
             }
 
             return paginatedCategories;
+        }
+
+        public Category GetCategoryById(int categoryId) {
+            var category = _categoryRepository.GetCategoryById(categoryId);
+
+            return category;
         }
 
     }

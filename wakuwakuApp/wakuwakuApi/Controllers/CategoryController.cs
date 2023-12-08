@@ -17,37 +17,20 @@ namespace wakuwakuApi.Controllers {
         // GET: CategoryController
         [HttpGet]
         public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
+
             var categories = _categoryService.GetCategories(page, pageSize, filter);
             return Ok(categories);
         }
 
-        /*
-        // GET: CategoryController
-        [HttpGet]
-        public ActionResult<IEnumerable<Category>> GetCategories(
-            [FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
-
-            var paginatedCategories = categories.Skip((page - 1) * pageSize).Take(pageSize);
-
-            if(!string.IsNullOrEmpty(filter)) {
-                paginatedCategories =
-                    paginatedCategories.Where(c => c.Name.Contains(filter, StringComparison.OrdinalIgnoreCase)
-                    || c.Description.Contains(filter, StringComparison.OrdinalIgnoreCase));
-            }
-
-            return Ok(paginatedCategories);
-        }
-
-         // TODO: GET By ID: CategoryController/5
-        [HttpGet("{id}", Name = "Get Category")]
-        public ActionResult<Category> GetCategory(int id) {
-            var category = categories.FirstOrDefault(c => c.Id == id);
-
-            if(category == null) return NotFound();
+        [HttpGet("{categoryId}")]
+        public ActionResult<Category> GetCategoryById(int categoryId) {
+            var category = _categoryService.GetCategoryById(categoryId);
 
             return Ok(category);
         }
 
+        /*
+           
         // TODO: POST: CategoryController
         [HttpPost]
         public ActionResult<Category> CreateCategory([FromBody] Category newCategory) {
