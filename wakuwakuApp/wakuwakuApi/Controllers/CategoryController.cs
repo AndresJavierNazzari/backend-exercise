@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using wakuwakuApi.Models;
 using wakuwakuApi.Services.Interfaces;
 
 namespace wakuwakuApi.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class CategoryController : ControllerBase {
 
         private readonly ICategoryService _categoryService;

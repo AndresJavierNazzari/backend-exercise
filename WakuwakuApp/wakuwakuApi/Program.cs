@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using System.Reflection;
+using Asp.Versioning;
+using Microsoft.AspNetCore.ResponseCompression;
+
 using wakuwakuApi.Persistence;
 using wakuwakuApi.Persistence.Interfaces;
 using wakuwakuApi.Repositories.Interfaces;
@@ -8,7 +8,8 @@ using wakuwakuApi.Repositories;
 using wakuwakuApi.Services.Interfaces;
 using wakuwakuApi.Services;
 using wakuwakuApi.Middlewares;
-using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.Options;
+
 
 namespace wakuwakuApi {
     public class Program {
@@ -34,6 +35,24 @@ namespace wakuwakuApi {
 
             builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
             builder.Services.AddProblemDetails();
+
+            var apiVersioningBuilder =  builder.Services.AddApiVersioning(setupAction => {
+                setupAction.AssumeDefaultVersionWhenUnspecified = true;
+                setupAction.DefaultApiVersion = new ApiVersion(1, 0);
+                setupAction.ReportApiVersions = true;
+              
+            });
+
+            apiVersioningBuilder.AddApiExplorer(options =>
+                    {
+                        // add the versioned api explorer, which also adds IApiVersionDescriptionProvider service
+                        // note: the specified format code will format the version as "'v'major[.minor][-status]"
+                        options.GroupNameFormat = "'v'VVV";
+
+                        // note: this option is only necessary when versioning by url segment. the SubstitutionFormat
+                        // can also be used to control the format of the API version in route templates
+                        options.SubstituteApiVersionInUrl = true;
+                    });
 
             var app = builder.Build();
             app.UseResponseCompression();

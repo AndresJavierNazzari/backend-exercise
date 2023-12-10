@@ -16,9 +16,5 @@ namespace wakuwakuApi.Models {
             this.Category = category;
         }
 
-        // Método estático para obtener el siguiente ID disponible
-        public static int GetNextId() {
-            return lastId + 1;
-        }
     }
 }

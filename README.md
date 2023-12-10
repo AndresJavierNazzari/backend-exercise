@@ -184,9 +184,15 @@
 
 ## Validations
 - Steps for Validations: Data annotations, Model-Level Validation, Model-State Validation, Fluent Validation, Custom Validation
+- Data annotations
 - Reporting validation errors
-- Fluent Validation (lib)
+- Custom attributes
+- IValidatableObject
+- Fluent Validation overview (lib)
+- Fluent Validation setup 
 - Simple and complex validators
+- Conditional validation and cascade options
 
 ## Versioning
-- 
+- Overview
+- Setup
