@@ -180,3 +180,13 @@
 - Middleware methods
 
 
+# Class 15
+
+## Validations
+- Steps for Validations: Data annotations, Model-Level Validation, Model-State Validation, Fluent Validation, Custom Validation
+- Reporting validation errors
+- Fluent Validation (lib)
+- Simple and complex validators
+
+## Versioning
+- 

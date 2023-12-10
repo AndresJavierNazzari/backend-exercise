@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\class14",
+    "\\class15",
+    "\\WakuwakuApp",
+    "\\WakuwakuApp\\wakuwakuApi",
+    "\\WakuwakuApp\\wakuwakuApi\\Controllers",
+    "\\WakuwakuApp\\wakuwakuApi\\Services"
   ],
-  "SelectedNode": "\\wakuwakuApp.sln",
+  "SelectedNode": "\\WakuwakuApp\\wakuwakuApi\\Controllers\\CategoryController.cs",
   "PreviewInSolutionExplorer": false
 }
