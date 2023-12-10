@@ -1,5 +1,9 @@
 ﻿using Asp.Versioning;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using wakuwakuApi.Models;
 using wakuwakuApi.Services.Interfaces;
 
@@ -9,9 +13,11 @@ namespace wakuwakuApi.Controllers {
     [Route("api/v{version:apiVersion}/[controller]")]
     public class CategoryController : ControllerBase {
 
+        private IValidator<CategoryCreate> _validator;
         private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryService categoryService) {
+        public CategoryController(IValidator<CategoryCreate> validator, ICategoryService categoryService) {
+            _validator = validator;
             _categoryService = categoryService;
         }
 
@@ -33,8 +39,13 @@ namespace wakuwakuApi.Controllers {
         // POST: CategoryController
         [HttpPost(Name = "CreateCategory")]
         public ActionResult<Category> CreateCategory([FromBody] CategoryCreate categoryCreate) {
-            var category = _categoryService.AddCategory(categoryCreate);
+            ValidationResult result = _validator.Validate(categoryCreate);
 
+            if(!result.IsValid) {
+                return BadRequest(result.Errors[0].ErrorMessage);
+            }
+
+            var category = _categoryService.AddCategory(categoryCreate);
             return CreatedAtRoute("CreateCategory", new { id = category.Id }, category);
         }
 

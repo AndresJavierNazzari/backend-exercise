@@ -5,9 +5,8 @@ public interface IGoalRepository {
 
     IEnumerable<Goal> GetGoals();
     Goal GetGoalById(int goalId);
-    Goal AddGoal(Goal goal);
-    Goal UpdateGoal(int goalId, Goal goal);
+    Goal AddGoal(GoalCreate goalCreate);
+    Goal UpdateGoal(int goalId, GoalUpdate goalUpdate);
     Goal DeleteGoalById(int goalId);
-
 }
 

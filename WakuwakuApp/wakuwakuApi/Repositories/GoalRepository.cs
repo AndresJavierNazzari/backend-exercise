@@ -1,5 +1,4 @@
-﻿using System;
-using wakuwakuApi.Exceptions;
+﻿using wakuwakuApi.Exceptions;
 using wakuwakuApi.Models;
 using wakuwakuApi.Persistence.Interfaces;
 using wakuwakuApi.Repositories.Interfaces;

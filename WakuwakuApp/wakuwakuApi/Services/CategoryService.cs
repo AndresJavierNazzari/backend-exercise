@@ -1,15 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using FluentValidation;
+using System;
+using System.ComponentModel.DataAnnotations;
 using wakuwakuApi.Exceptions;
 using wakuwakuApi.Models;
 using wakuwakuApi.Repositories.Interfaces;
 using wakuwakuApi.Services.Interfaces;
+using wakuwakuApi.Validators;
 
 namespace wakuwakuApi.Services {
     public class CategoryService : ICategoryService {
 
         private readonly ICategoryRepository _categoryRepository;
+
         public CategoryService(ICategoryRepository categoryRepository) {
             _categoryRepository = categoryRepository;
+
         }
 
         public IEnumerable<Category> GetCategories(int page = 1, int pageSize = 10, string filter = "") {
@@ -51,8 +56,6 @@ namespace wakuwakuApi.Services {
             NotFoundException.ThrowIfNull(category);
 
             return category;
-
         }
-
     }
 }

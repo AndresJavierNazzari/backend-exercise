@@ -37,12 +37,11 @@ namespace wakuwakuApi.Persistence {
 
             Goals = new List<Goal> {
                 new Goal("Aprender a programar en C#", DateTime.Today, new DateTime(2023, 12, 31), "En progreso"),
-                new Goal("Obtener certificación de desarrollo web", DateTime.Today, new DateTime(2024, 16, 31), "Planificado"),
+                new Goal("Obtener certificación de desarrollo web", DateTime.Today, new DateTime(2024, 7, 29), "Planificado"),
                 new Goal("Correr un maratón", DateTime.Today, new DateTime(2023, 11, 30), "En espera"),
                 new Goal("Aprender a tocar un instrumento", DateTime.Today, new DateTime(2024, 6, 30), "Planificado"),
                 new Goal("Contribuir a un proyecto de código abierto", DateTime.Today, new DateTime(2023, 12, 31), "En progreso"),
              };
-
         }
     }
 
