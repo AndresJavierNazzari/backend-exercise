@@ -9,12 +9,13 @@ using wakuwakuApi.Repositories;
 using wakuwakuApi.Services.Interfaces;
 using wakuwakuApi.Services;
 using wakuwakuApi.Middlewares;
+using FluentValidation;
+using wakuwakuApi.Models;
+using wakuwakuApi.Validators;
 
 
 namespace wakuwakuApi {
     public class Program {
-
-
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -60,12 +61,14 @@ namespace wakuwakuApi {
 
             // Repositories
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IGoalRepository, GoalRepository>();
 
             // Services
             builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             // Validators
-
+            builder.Services.AddScoped<IValidator<Goal>, GoalValidator>();
+            builder.Services.AddScoped<IValidator<Category>, CategoryValidator>();
 
             // ***********  BUILDER ************
 
