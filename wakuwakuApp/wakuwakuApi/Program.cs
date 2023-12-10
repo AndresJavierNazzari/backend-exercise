@@ -65,13 +65,13 @@ namespace wakuwakuApi {
 
             // Services
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IGoalService, GoalService>();
 
             // Validators
             builder.Services.AddScoped<IValidator<Goal>, GoalValidator>();
-            builder.Services.AddScoped<IValidator<Category>, CategoryValidator>();
+            builder.Services.AddScoped<IValidator<CategoryCreate>, CategoryValidator>();
 
             // ***********  BUILDER ************
-
             var app = builder.Build();
             app.UseResponseCompression();
 
