@@ -15,7 +15,6 @@ public class CategoryRepository : ICategoryRepository {
         _context = context;
     }
 
-
     public IEnumerable<Category> GetCategories() {
         var categoryList = _context.Categories ?? throw new Exception();
         NotFoundException.ThrowIfNull(categoryList);
@@ -45,7 +44,7 @@ public class CategoryRepository : ICategoryRepository {
 
     public Category UpdateCategory(int categoryId, CategoryUpdate categoryUpdate) {
         var categoryList = _context.Categories;
-        Category existingCategory = categoryList.FirstOrDefault(c => c.Id == categoryId);
+        Category? existingCategory = categoryList.FirstOrDefault(c => c.Id == categoryId);
         NotFoundException.ThrowIfNull(existingCategory);
 
         existingCategory.Name = categoryUpdate.Name;
