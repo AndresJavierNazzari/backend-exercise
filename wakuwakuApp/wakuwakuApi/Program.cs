@@ -68,7 +68,7 @@ namespace wakuwakuApi {
             builder.Services.AddScoped<IGoalService, GoalService>();
 
             // Validators
-            builder.Services.AddScoped<IValidator<Goal>, GoalValidator>();
+            builder.Services.AddScoped<IValidator<GoalCreate>, GoalValidator>();
             builder.Services.AddScoped<IValidator<CategoryCreate>, CategoryValidator>();
 
             // ***********  BUILDER ************
