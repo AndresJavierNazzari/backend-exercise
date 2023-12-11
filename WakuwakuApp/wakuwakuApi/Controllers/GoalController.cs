@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Http;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using wakuwakuApi.Models;
-using wakuwakuApi.Services;
 using wakuwakuApi.Services.Interfaces;
 
 namespace wakuwakuApi.Controllers {
@@ -10,9 +10,12 @@ namespace wakuwakuApi.Controllers {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     public class GoalController : ControllerBase {
+        private readonly IValidator<GoalCreate> _validator;
         private readonly IGoalService _goalService;
 
-        public GoalController(IGoalService goalService) {
+
+        public GoalController(IValidator<GoalCreate> validator, IGoalService goalService) {
+            _validator = validator;
             _goalService = goalService;
         }
 
@@ -33,6 +36,13 @@ namespace wakuwakuApi.Controllers {
         // POST: GoalController
         [HttpPost(Name = "CreateGoal")]
         public ActionResult<Goal> CreateGoal([FromBody] GoalCreate goalCreate) {
+
+            ValidationResult result = _validator.Validate(goalCreate);
+
+            if(!result.IsValid) {
+                return BadRequest(result.Errors[0].ErrorMessage);
+            }
+
             Goal goal = _goalService.AddGoal(goalCreate);
 
             return CreatedAtRoute("CreateGoal", new { id = goal.Id }, goal);

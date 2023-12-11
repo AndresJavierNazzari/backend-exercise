@@ -1,9 +1,7 @@
 ﻿using Asp.Versioning;
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using wakuwakuApi.Models;
 using wakuwakuApi.Services.Interfaces;
 
@@ -24,7 +22,6 @@ namespace wakuwakuApi.Controllers {
         // GET: CategoryController
         [HttpGet]
         public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
-
             var categories = _categoryService.GetCategories(page, pageSize, filter);
             return Ok(categories);
         }

@@ -2,7 +2,7 @@
 using wakuwakuApi.Models;
 
 namespace wakuwakuApi.Validators {
-    public class GoalValidator : AbstractValidator<Goal> {
+    public class GoalValidator : AbstractValidator<GoalCreate> {
         public GoalValidator() {
             RuleFor(g => g.Description).NotEmpty().MaximumLength(200).WithMessage("The maximum length is 200 characters.");
             RuleFor(g => g.Status).NotEmpty().MaximumLength(50).WithMessage("The maximum length is 50 characters.");
