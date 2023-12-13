@@ -212,3 +212,20 @@
 - Healthcheck
 - HATEOAS: Hypermedia as the Engine of Application State
 - Richardson Maturity Level
+
+
+# Class 17
+
+## Authentication and Authorization
+
+- Authentication and Authorization
+- API Key protection middleware
+- JWT
+- Token Based security
+- Identity provider
+- Oauth
+- OpenID
+- Multiple Authentication schemas
+- Claims
+- Authorization Policies and IAuthorizationService
+- Requirements and Handlers
