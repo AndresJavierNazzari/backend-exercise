@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WakuwakuApp\\wakuwakuApi"
   ],
-  "SelectedNode": "\\wakuwakuApp.sln",
+  "SelectedNode": "\\WakuwakuApp",
   "PreviewInSolutionExplorer": false
 }

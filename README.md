@@ -196,3 +196,19 @@
 ## Versioning
 - Overview
 - Setup
+
+
+# Class 16
+
+## Best Practices
+
+- Status Codes: 2xx Success, 4xx Client Errors, 5xx Client Errors
+- HTTP Method Overview by Use Case
+- WEB APIs Models
+- Content negotiation and formatters
+- Add support for Head
+- CORS Implementation
+- Add support for Options
+- Healthcheck
+- HATEOAS: Hypermedia as the Engine of Application State
+- Richardson Maturity Level
