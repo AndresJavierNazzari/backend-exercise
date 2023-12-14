@@ -17,6 +17,8 @@ using wakuwakuApi.Validators;
 namespace wakuwakuApi {
     public class Program {
         public static void Main(string[] args) {
+
+            // ***********  BUILDER ************
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
@@ -52,7 +54,6 @@ namespace wakuwakuApi {
             });
 
             // ***********  FLUENT VALIDATION ************
-
             builder.Services.AddFluentValidationAutoValidation();
 
             // ***********  DEPENDENCY INJECTION ************
@@ -71,7 +72,12 @@ namespace wakuwakuApi {
             builder.Services.AddScoped<IValidator<GoalCreate>, GoalValidator>();
             builder.Services.AddScoped<IValidator<CategoryCreate>, CategoryValidator>();
 
-            // ***********  BUILDER ************
+            // ***********  HEALTHCHECK ************
+            builder.Services.AddHealthChecks();
+
+            // ********************************** //
+            // ***********  PIPELINE ************ //
+            // ********************************** //
             var app = builder.Build();
             app.UseResponseCompression();
 
@@ -82,16 +88,13 @@ namespace wakuwakuApi {
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthorization();
             app.UseExceptionHandler();
-
+            app.UseRouting();
+            app.UseAuthorization();
             app.MapControllers();
+            app.MapHealthChecks("/health");
             app.Run();
         }
 
     }
 }
-
-
-
-
