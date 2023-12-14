@@ -19,21 +19,23 @@ namespace wakuwakuApi.Controllers {
             _goalService = goalService;
         }
 
-        // GET: GoalController
+        // GET: /Goal
         [HttpGet]
+        [HttpHead]
         public ActionResult<IEnumerable<Goal>> GetGoals([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
             var goals = _goalService.GetGoals(page, pageSize, filter);
             return Ok(goals);
         }
 
         [HttpGet("{goalId}")]
+        [HttpHead]
         public ActionResult<Goal> GetGoalById(int goalId) {
             Goal goal = _goalService.GetGoalById(goalId);
 
             return Ok(goal);
         }
 
-        // POST: GoalController
+        // POST: /Goal
         [HttpPost(Name = "CreateGoal")]
         public ActionResult<Goal> CreateGoal([FromBody] GoalCreate goalCreate) {
 
@@ -48,7 +50,7 @@ namespace wakuwakuApi.Controllers {
             return CreatedAtRoute("CreateGoal", new { id = goal.Id }, goal);
         }
 
-        //  PUT: GoalController/5
+        //  PUT: /Goal/{goalId}
         [HttpPut("{goalId}")]
         public ActionResult<Goal> UpdateGoal(int goalId, [FromBody] GoalUpdate goalUpdate) {
             Goal goal = _goalService.UpdateGoal(goalId, goalUpdate);
@@ -56,7 +58,7 @@ namespace wakuwakuApi.Controllers {
             return Ok(goal);
         }
 
-        // DELETE: GoalController/5
+        // DELETE:/Goal/{goalId}
         [HttpDelete("{id}")]
         public IActionResult DeleteGoal(int id) {
             var deletedGoal = _goalService.DeleteGoalById(id);
