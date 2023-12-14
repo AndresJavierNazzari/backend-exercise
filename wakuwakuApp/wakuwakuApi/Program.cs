@@ -75,6 +75,16 @@ namespace wakuwakuApi {
             // ***********  HEALTHCHECK ************
             builder.Services.AddHealthChecks();
 
+            // ***********  CORS ************
+
+            builder.Services.AddCors(options => {
+                options.AddDefaultPolicy(policy => {
+                    policy.WithOrigins("https://localhost:7140/")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
             // ********************************** //
             // ***********  PIPELINE ************ //
             // ********************************** //
@@ -90,6 +100,8 @@ namespace wakuwakuApi {
             app.UseHttpsRedirection();
             app.UseExceptionHandler();
             app.UseRouting();
+            //The call to UseCors must be placed after UseRouting, but before UseAuthorization
+            app.UseCors();
             app.UseAuthorization();
             app.MapControllers();
             app.MapHealthChecks("/health");
