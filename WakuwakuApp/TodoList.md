@@ -21,15 +21,15 @@
 <span class="verb trace">TRACE</span>
 
 ## Implement routes and necesary responses for all Models
-- We need more models?: ❌ User, ✅ Skill, ✅ Goal, ✅ Category
+- We need more models?: ❌ User, ❌ Skill, ✅ Goal, ✅ Category
     - ❌ User
         - <span class="verb get">GET</span> users
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -37,13 +37,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb get">GET</span> user
+        - ❌ <span class="verb get">GET</span> user
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -51,13 +51,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb post">POST</span> user
+        - ❌ <span class="verb post">POST</span> user
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -65,13 +65,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb put">PUT</span> user
+        - ❌ <span class="verb put">PUT</span> user
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -79,13 +79,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb delete">DELETE</span> user
+        - ❌ <span class="verb delete">DELETE</span> user
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -93,43 +93,19 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-
-    - ✅ Skill
-        - <span class="verb get">GET</span> skills
+        - ❌ <span class="verb options">OPTIONS</span> user
             - ❌ 200 OK
-            - ❌ 201 C
-            - ❌ 204 No Content
-            - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
-            - ❌ 404 Not Found
-            - ❌ 405 Method Not Allowed
-            - ❌ 418 I'm a teapot
-            - ❌ 422  Unprocessable Entity
-            - ❌ 500 Internal Server Error
-            - ❌ Validations?
-            - ❌ HATEOAS
-        - <span class="verb get">GET</span> skill
+        - ❌ <span class="verb head">HEAD</span> user
             - ❌ 200 OK
-            - ❌ 201 C
-            - ❌ 204 No Content
-            - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
-            - ❌ 404 Not Found
-            - ❌ 405 Method Not Allowed
-            - ❌ 418 I'm a teapot
-            - ❌ 422  Unprocessable Entity
-            - ❌ 500 Internal Server Error
-            - ❌ Validations?
-            - ❌ HATEOAS
-        - <span class="verb post">POST</span> skill
+            
+    - ❌ Skill
+        - ❌ <span class="verb get">GET</span> skills
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -137,13 +113,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb put">PUT</span> skill
+        - ❌ <span class="verb get">GET</span> skill
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -151,13 +127,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb delete">DELETE</span> skill
+        - ❌ <span class="verb post">POST</span> skill
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -165,15 +141,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-
-    - ✅ Goal
-        - <span class="verb get">GET</span> goals
+        - ❌ <span class="verb put">PUT</span> skill
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -181,13 +155,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb get">GET</span> goal
+        - ❌ <span class="verb delete">DELETE</span> skill
             - ❌ 200 OK
-            - ❌ 201 C
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -195,27 +169,19 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb post">POST</span> goal
+        - ❌ <span class="verb options">OPTIONS</span> user
             - ❌ 200 OK
-            - ❌ 201 C
-            - ❌ 204 No Content
-            - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
-            - ❌ 404 Not Found
-            - ❌ 405 Method Not Allowed
-            - ❌ 418 I'm a teapot
-            - ❌ 422  Unprocessable Entity
-            - ❌ 500 Internal Server Error
-            - ❌ Validations?
-            - ❌ HATEOAS
-        - <span class="verb put">PUT</span> goal
+        - ❌ <span class="verb head">HEAD</span> user
             - ❌ 200 OK
-            - ❌ 201 C
+    
+    - 👷 Goal
+        - 👷 <span class="verb get">GET</span> /goals
+            - ✅ 200 OK
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -223,13 +189,27 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb delete">DELETE</span> goal
+        - 👷 <span class="verb get">GET</span> /goal/goalId
+            - ✅ 200 OK
+            - ❌ 201 Created
+            - ❌ 204 No Content
+            - ❌ 400 Bad Req
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
+            - ❌ 404 Not Found
+            - ❌ 405 Method Not Allowed
+            - ❌ 418 I'm a teapot
+            - ❌ 422  Unprocessable Entity
+            - ❌ 500 Internal Server Error
+            - ❌ Validations?
+            - ❌ HATEOAS
+        - 👷 <span class="verb post">POST</span> /goal
             - ❌ 200 OK
-            - ❌ 201 C
+            - ✅ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -237,15 +217,75 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-
-    - ✅ Category
-        - <span class="verb get">GET</span> categories
+        - 👷 <span class="verb put">PUT</span> /goal/goalId
+            - ✅ 200 OK
+            - ❌ 201 Created
+            - ❌ 204 No Content
+            - ❌ 400 Bad Req
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
+            - ❌ 404 Not Found
+            - ❌ 405 Method Not Allowed
+            - ❌ 418 I'm a teapot
+            - ❌ 422  Unprocessable Entity
+            - ❌ 500 Internal Server Error
+            - ❌ Validations?
+            - ❌ HATEOAS
+        - 👷 <span class="verb delete">DELETE</span> goal/goalId
+            - ✅ 200 OK
+            - ❌ 201 Created
+            - ❌ 204 No Content
+            - ❌ 400 Bad Req
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
+            - ❌ 404 Not Found
+            - ❌ 405 Method Not Allowed
+            - ❌ 418 I'm a teapot
+            - ❌ 422  Unprocessable Entity
+            - ❌ 500 Internal Server Error
+            - ❌ Validations?
+            - ❌ HATEOAS
+        - ✅ <span class="verb options">OPTIONS</span> user
+            - ✅  200 OK
+        - ✅ <span class="verb head">HEAD</span> user
+            - ✅ 200 OK
+                        
+    - 👷 Category
+        - 👷 <span class="verb get">GET</span> /categories
+            - ✅ 200 OK
+            - ❌ 201 Create
+            - ❌ 204 No Content
+            - ❌ 400 Bad Req
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
+            - ❌ 404 Not Found
+            - ❌ 405 Method Not Allowed
+            - ❌ 418 I'm a teapot
+            - ❌ 422  Unprocessable Entity
+            - ❌ 500 Internal Server Error
+            - ❌ Validations?
+            - ❌ HATEOAS
+        - 👷 <span class="verb get">GET</span> /category/categoryId
+            - ✅ 200 OK
+            - ❌ 201 Create
+            - ❌ 204 No Content
+            - ❌ 400 Bad Req
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
+            - ❌ 404 Not Found
+            - ❌ 405 Method Not Allowed
+            - ❌ 418 I'm a teapot
+            - ❌ 422  Unprocessable Entity
+            - ❌ 500 Internal Server Error
+            - ❌ Validations?
+            - ❌ HATEOAS
+        - 👷 <span class="verb post">POST</span> category
             - ❌ 200 OK
-            - ❌ 201 C
+            - ✅ 201 Create
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -253,13 +293,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb get">GET</span> category
-            - ❌ 200 OK
-            - ❌ 201 C
+        - 👷 <span class="verb put">PUT</span> category/categoryId
+            - ✅ 200 OK
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -267,13 +307,13 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb post">POST</span> category
-            - ❌ 200 OK
-            - ❌ 201 C
+        - 👷 <span class="verb delete">DELETE</span> category/categoryId
+            - ✅ 200 OK
+            - ❌ 201 Created
             - ❌ 204 No Content
             - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
+            - ❌ 401 Unauthorized (unauthenticated)
+            - ❌ 403 Forbiden (unauthorized)
             - ❌ 404 Not Found
             - ❌ 405 Method Not Allowed
             - ❌ 418 I'm a teapot
@@ -281,35 +321,10 @@
             - ❌ 500 Internal Server Error
             - ❌ Validations?
             - ❌ HATEOAS
-        - <span class="verb put">PUT</span> category
-            - ❌ 200 OK
-            - ❌ 201 C
-            - ❌ 204 No Content
-            - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
-            - ❌ 404 Not Found
-            - ❌ 405 Method Not Allowed
-            - ❌ 418 I'm a teapot
-            - ❌ 422  Unprocessable Entity
-            - ❌ 500 Internal Server Error
-            - ❌ Validations?
-            - ❌ HATEOAS
-        - <span class="verb delete">DELETE</span> category
-            - ❌ 200 OK
-            - ❌ 201 C
-            - ❌ 204 No Content
-            - ❌ 400 Bad Req
-            - ❌ 401 Unauthorized (unauthe
-            - ❌ 403 Forbiden (unauthorize
-            - ❌ 404 Not Found
-            - ❌ 405 Method Not Allowed
-            - ❌ 418 I'm a teapot
-            - ❌ 422  Unprocessable Entity
-            - ❌ 500 Internal Server Error
-            - ❌ Validations?
-            - ❌ HATEOAS
-
+        - ✅  <span class="verb options">OPTIONS</span> user
+            - ✅  200 OK
+        - ✅ <span class="verb head">HEAD</span> user
+            - ✅ 200 OK
 
 ### Related
 - [Status codes: MozzilaDoc](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

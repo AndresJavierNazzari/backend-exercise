@@ -13,7 +13,6 @@ namespace wakuwakuApi.Controllers {
         private readonly IValidator<GoalCreate> _validator;
         private readonly IGoalService _goalService;
 
-
         public GoalController(IValidator<GoalCreate> validator, IGoalService goalService) {
             _validator = validator;
             _goalService = goalService;
@@ -70,5 +69,14 @@ namespace wakuwakuApi.Controllers {
 
             return Ok(response);
         }
+
+        // OPTIONS: /Goal
+        [HttpOptions]
+        public IActionResult OptionsGoal() {
+            Response.Headers.Add("Allow", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+            return Ok();
+        }
+
+
     }
 }

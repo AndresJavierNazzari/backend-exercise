@@ -19,21 +19,23 @@ namespace wakuwakuApi.Controllers {
             _categoryService = categoryService;
         }
 
-        // GET: CategoryController
+        // GET: /Category
         [HttpGet]
+        [HttpHead]
         public ActionResult<IEnumerable<Category>> GetCategories([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string filter = "") {
             var categories = _categoryService.GetCategories(page, pageSize, filter);
             return Ok(categories);
         }
-
+        // GET: /Category/{categoryId}
         [HttpGet("{categoryId}")]
+        [HttpHead]
         public ActionResult<Category> GetCategoryById(int categoryId) {
             var category = _categoryService.GetCategoryById(categoryId);
 
             return Ok(category);
         }
 
-        // POST: CategoryController
+        // POST: /Category
         [HttpPost(Name = "CreateCategory")]
         public ActionResult<Category> CreateCategory([FromBody] CategoryCreate categoryCreate) {
             ValidationResult result = _validator.Validate(categoryCreate);
@@ -46,7 +48,7 @@ namespace wakuwakuApi.Controllers {
             return CreatedAtRoute("CreateCategory", new { id = category.Id }, category);
         }
 
-        //  PUT: CategoryController/5
+        //  PUT: /Category/{categoryId}
         [HttpPut("{categoryId}")]
         public ActionResult<Category> UpdateCategory(int categoryId, [FromBody] CategoryUpdate categoryUpdate) {
             var category = _categoryService.UpdateCategory(categoryId, categoryUpdate);
@@ -54,7 +56,7 @@ namespace wakuwakuApi.Controllers {
             return Ok(category);
         }
 
-        // DELETE: CategoryController/5
+        // DELETE: /Category/{categoryId}
         [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id) {
             var deletedCategory = _categoryService.DeleteCategoryById(id);
@@ -65,6 +67,13 @@ namespace wakuwakuApi.Controllers {
             };
 
             return Ok(response);
+        }
+
+        // OPTIONS: /Category
+        [HttpOptions]
+        public IActionResult OptionsCategory() {
+            Response.Headers.Add("Allow", "GET, POST, PUT, DELETE, OPTIONS");
+            return Ok();
         }
     }
 }
