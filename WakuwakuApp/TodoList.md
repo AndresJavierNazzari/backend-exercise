@@ -4,7 +4,7 @@
 
 - ✅ ~~GZIP COMPRESSION~~
 - ✅ ~~HEALTHECHECKS~~
-- ❌ CORS
+- ✅ ~~CORS~~
 - ❌ HATEOAS
 - ❌ DATABASE
 
