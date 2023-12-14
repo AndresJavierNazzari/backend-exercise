@@ -229,3 +229,33 @@
 - Claims
 - Authorization Policies and IAuthorizationService
 - Requirements and Handlers
+
+
+# Class 18
+
+## Presentations
+- Diccionarios and HashSets
+- Stacks and Queues
+- ReadOnlyList
+- Inmutable Array
+
+
+# Class 19
+
+## 
+- Delegates
+- Delegate invocation list
+- Action
+- Func
+- Lambda expressions
+- Anonymous types
+
+## LINQ - Language Integrated Query
+- Why?
+- LINQ use cases
+- LINQ avantages
+- Query Syntax
+- Method Syntax
+- Projections
+
+
