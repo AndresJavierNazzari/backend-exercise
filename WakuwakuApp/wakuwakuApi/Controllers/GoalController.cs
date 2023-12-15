@@ -73,7 +73,7 @@ namespace wakuwakuApi.Controllers {
         // OPTIONS: /Goal
         [HttpOptions]
         public IActionResult OptionsGoal() {
-            Response.Headers.Add("Allow", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+            Response.Headers.Append("Allow", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
             return Ok();
         }
 
