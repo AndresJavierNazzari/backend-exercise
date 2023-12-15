@@ -261,6 +261,7 @@
 # Class 20
 
 ##  LINQ
+- LINQ Marbles web site: https://linqmarbles.info/
 - Mental map
 - Filtering
 - Partitioning
