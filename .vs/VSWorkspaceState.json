@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\class19",
     "\\WakuwakuApp",
     "\\WakuwakuApp\\wakuwakuApi",
     "\\WakuwakuApp\\wakuwakuApi\\Controllers"
   ],
-  "SelectedNode": "\\class19\\README.md",
+  "SelectedNode": "\\WakuwakuApp\\wakuwakuApi\\Controllers\\CategoryController.cs",
   "PreviewInSolutionExplorer": false
 }
