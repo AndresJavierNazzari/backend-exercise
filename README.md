@@ -258,4 +258,16 @@
 - Method Syntax
 - Projections
 
+# Class 20
+
+##  LINQ
+- Mental map
+- Filtering
+- Partitioning
+- Ordering
+- Quantification
+- Get element
+- Agregations
+- Grouping
+- Joining
 
