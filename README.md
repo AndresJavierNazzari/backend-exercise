@@ -242,7 +242,6 @@
 
 # Class 19
 
-## 
 - Delegates
 - Delegate invocation list
 - Action
@@ -258,6 +257,7 @@
 - Method Syntax
 - Projections
 
+
 # Class 20
 
 ##  LINQ
@@ -272,3 +272,17 @@
 - Grouping
 - Joining
 
+
+# Class 21
+
+- Structs
+- Characteristics of structs
+- When to use a struct?
+- How to achieve Inmutability
+- Records
+- What is a nullable type?
+- Nullable methods
+- Null Checking and forgiving operators
+- Examples
+- Data types default values
+- Generics and nullable
