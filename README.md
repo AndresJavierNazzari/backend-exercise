@@ -286,3 +286,53 @@
 - Examples
 - Data types default values
 - Generics and nullable
+
+# Class 22
+
+- Architectural styles
+- API Styles Evolution
+- API Styles Use Cases
+- API Styles Example
+- GraphQL vs Rest vs gRPC
+- Layered architecture
+- 4-tier layered architecture
+
+# Class 23
+
+- Async programming
+- Async vs parallel programming
+- Await keyword
+- Threads
+- Exceptions with Async
+- Async and Void
+- Some best practices with Async
+- Await cons
+
+# Class 24 
+
+## Principles of software engineering
+- Separation of Concerns
+- Modularity
+- Abstraction
+- Anticipation of Change
+- Consistency
+- Generality
+- Incremental Development
+ 
+## Solid Principles
+- Single Responsability Principle (SRP)
+- Open/Close Principle (OCP)
+- Liskov Substitution Principle (LSP)
+- Interface Segregation Principle (ISP)
+- Dependency Inversion Principle (DIP)
+- Solid Principles Interconnection
+- Solid TLDR
+- SRP: Chohesion and Coupling
+- OCP: Abstraction and concreteness
+- LSP: Tell don't ask
+- ISP: Example
+- DIP: Depending on Abstractions
+- DIP: Example
+ 
+
+# Class 25
