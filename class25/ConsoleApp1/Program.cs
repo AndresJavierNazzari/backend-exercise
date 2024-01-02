@@ -2,6 +2,28 @@
 using System.Collections.Generic;
 
 public class ValidParentheses {
+    public static IList<string> LetterCombinations(string digits) {
+        List<string> result = new List<string>();
+        if(string.IsNullOrEmpty(digits)) return result;
+        string[] mapping = { "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+
+        result.Add("");
+
+        foreach(char digit in digits) {
+            List<string> tempResult = new List<string>();
+
+            foreach(string prefix in result) {
+                string letters = mapping[digit - '2'];
+                foreach(char letter in letters) {
+                    tempResult.Add(prefix + letter);
+                }
+            }
+            result = tempResult;
+        }
+
+        return result;
+    }
+
     public static bool IsValid(string s) {
         Stack<char> stack = new Stack<char>();
 
@@ -33,8 +55,8 @@ public class ValidParentheses {
 
     public static void Main() {
         // Example usage:
-        Console.WriteLine(IsValid("()"));       // Output: true
-        Console.WriteLine(IsValid("()[]{}"));   // Output: true
-        Console.WriteLine(IsValid("(]"));        // Output: false
+        Console.WriteLine(LetterCombinations("24"));
+        Console.WriteLine(LetterCombinations(""));
+        Console.WriteLine(LetterCombinations("2"));
     }
 }

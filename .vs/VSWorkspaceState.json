@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\class25",
+    "\\class25\\ConsoleApp1",
     "\\WakuwakuApp"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\class25\\ConsoleApp1\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
